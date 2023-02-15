@@ -1,5 +1,12 @@
 <template>
   <div class="outer_box">
+    <!-- <video
+      src="../../assets/ReViveLand.mp4"
+      class="backgroundVedio"
+      autoplay
+      loop
+      muted
+    ></video> -->
     <div class="filterImg"></div>
     <div class="login_box">
       <h1><img src="../../assets/Island.png" alt="" /></h1>
@@ -253,5 +260,15 @@ button:hover {
   margin: 0px 30px;
   display: flex;
   justify-content: space-between;
+}
+
+.backgroundVedio {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  object-fit: cover;
 }
 </style>
