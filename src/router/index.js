@@ -5,6 +5,7 @@ import HelloWorld from '@/components/HelloWorld'
 import First from '@/components/views/first'
 import Second from '@/components/views/second'
 import Login from '@/components/views/login'
+import Register from '@/components/views/register'
 import Main from '@/components/views/main'
 import DataSync from '@/components/views/data_sync'
 import Advice from '@/components/views/advice'
@@ -34,6 +35,11 @@ export default new Router({
       path: '/login',
       name: 'Login',
       component: Login      
+    },
+    {
+      path: '/register',
+      name: 'Register',
+      component: Register      
     },
     {
       path: '/main',
