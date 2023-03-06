@@ -13,11 +13,6 @@
               v-model="username"
               clearable
             >
-              <el-row>
-                <el-col :span="4"
-                  ><div class="grid-content bg-purple"></div
-                ></el-col>
-              </el-row>
             </el-input>
             <el-input
               placeholder="密码"
