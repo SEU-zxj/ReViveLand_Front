@@ -65,11 +65,11 @@ export default {
   },
   methods: {
     submitUpload() {
-      //用户上传文件时，保证文件数量为4，而且命名符合规范
-      if (this.$refs.upload.uploadFiles.length != 4) {
+      //用户上传文件时，保证文件数量为5，而且命名符合规范
+      if (this.$refs.upload.uploadFiles.length != 5) {
         this.$notify({
           title: "不符合上传规范",
-          message: "请上传规定的四个文件进行分析",
+          message: "请上传规定的五个文件进行分析",
           type: "warning"
         });
       } else {
@@ -77,6 +77,7 @@ export default {
         var Activities_run = false;
         var Activities_breath = false;
         var sleep = false;
+        var steps = false;
 
         var files = this.$refs.upload.uploadFiles;
         console.log(files);
@@ -108,12 +109,21 @@ export default {
           } else if (files[i].name == "睡眠.csv" && files[i].size != 0) {
             sleep = true;
             this.fileCount++;
+          } else if (files[i].name == "步数.csv" && files[i].size != 0) {
+            steps = true;
+            this.fileCount++;
           } else {
             console.log("执行到else");
           }
         }
 
-        if (Activities_walk && Activities_run && Activities_breath && sleep) {
+        if (
+          Activities_walk &&
+          Activities_run &&
+          Activities_breath &&
+          sleep &&
+          steps
+        ) {
           //*************************************************************************//
           //提示用户正在分析
           console.log("上传分析中，请稍后...");
@@ -206,7 +216,7 @@ export default {
 
 .dataUploadBox /deep/ .el-card__body {
   width: 90%;
-  height: 90%;
+  height: 85%;
   padding: 3% 5%;
 }
 
